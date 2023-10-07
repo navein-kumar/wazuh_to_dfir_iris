@@ -18,9 +18,9 @@ alert_file.close()
 alertlevel = alert_json['rule']['level']
 ruleid = alert_json['rule']['id']
 ruledescription = alert_json['rule']['description']
-agentid = alert_json['agent']['id']
+agentip = alert_json['agent']['ip']
 agentname = alert_json['agent']['name']
-fullog = alert_json['full_log']
+#fullog = alert_json['full_log']
 
 # Set the project attributes ===> This section needs to be manually configured before running!
 # statusid = 'Active'     # You can get this from the beggining of an issue key. For example, WS for issue key WS-5018
@@ -39,7 +39,7 @@ issue_data = {
         "alert_status_id":"1",
         "alert_customer_id":"1",
         "alert_severity_id":"1",
-        "alert_description": ' Details: ' + ruledescription + ' "\n" Agenid: '+ agentid + ' "\n" Agentname: ' + agentname + ' "\n" Ruleid: ' + ruleid + ' "\n" Fullog: ' + fullog + ' '
+        "alert_description": ' Alert_Details: ' + ruledescription + ' "\n" Agent_IP: '+ str(agentip) + ' "\n" Agent_Name: ' + agentname + ' "\n" Rule_ID: ' + str(ruleid) + ' "\n" Alert_Level: ' + str(alertlevel) + ' '
 
 }
 
